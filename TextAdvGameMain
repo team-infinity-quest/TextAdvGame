@@ -44,10 +44,36 @@ if correct == "No":
         
 #Function for instantly showing the characters information 
 def character():
-    print("Name: " + name)
-    print("Sex: " + sex)
-    print("Age: " + age)
+    print("Name: ", name)
+    print("Sex: ", sex)
+    print("Age: ", age)
+
+    
+#Clears the output screen (made for CodeSkulptor3 may not work on other output screens)
+def clear():
+    clear = 1
+    while clear < 20:
+        print("\n")
+        clear = clear + 1
+    
+#Test area
+play = 0
+while play < 1:
+    userinput = input("Please Enter a command: ")
         
 #Commands for debugging
-def debugmenu():
-    print("Welcome to the debugging menu")
+    def debugmenu():
+        print("Welcome to the debugging menu")
+
+#Basic commands
+    if userinput == "help":
+        clear()
+        print("Welcome to the \"Help\" menu")
+        print("Here are a list of commands you may enter")
+        print("help \t this opens the \"Help\" menu")
+        print("character \t this opens the character information screen")
+        print("end \t ends the program")
+    if userinput == "character":
+        character()
+    if userinput == "end":
+        play = 1
