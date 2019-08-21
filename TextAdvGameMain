@@ -11,36 +11,36 @@ else:
     print("Let us begin")
 
 #Character creation
-def name():				#Your characters name
-    name = input("Welcome to character creation! Please enter your name: ")
-    print("Your name is: " + name)
+                #Your characters name
+name = input("Welcome to character creation! Please enter your name: ")
+print("Your name is: " + name)
     
-def sex():   			#Your characters sex
-    sex = input("Are you a boy or a girl?")
-    print("You are a: " + sex)
+            #Your characters sex
+sex = input("Are you a boy or a girl?")
+print("You are a: " + sex)
 
-def age():				#Your characters age
-    age = input("How old are you")
-    print("You are " + age + " years old ")
+                #Your characters age
+age = input("How old are you")
+print("You are " + age + " years old ")
  
 #Call the functions to get players info
-
-name()
-sex()
-age()
 
 
 #Checks if everything is correct
 
-correct = input("Is all of this correct?")
-if correct == "No":
+correct = input("Is all of this correct?").lower()
+if correct == "no":
     correctSpec = input("What would you like to change, Name, Sex, or Age?").lower()
     if correctSpec == "name":
-        name()
+        name = input("Welcome to character creation! Please enter your name: ")
+        print("Your name is: " + name)
     elif correctSpec == "sex":
-        sex()
+        sex = input("Are you a boy or a girl?")
+        print("You are a: " + sex)
     elif correctSpec == "age":
-        age()
+        age = input("How old are you")
+        print("You are " + age + " years old ")
+       
         
 #Function for instantly showing the characters information 
 def character():
@@ -54,7 +54,7 @@ def clear():
     clear = 1
     while clear < 20:
         print("\n")
-        clear = clear + 1
+        clear += 1
     
 #Test area
 play = 0
