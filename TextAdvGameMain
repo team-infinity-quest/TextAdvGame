@@ -42,6 +42,11 @@ if correct == "No":
     elif correctSpec == "age":
         age()
         
+#Function for instantly showing the characters information 
+def character():
+    print("Name: " + name)
+    print("Sex: " + sex)
+    print("Age: " + age)
         
 #Commands for debugging
 def debugmenu():
