@@ -4,14 +4,14 @@ This is a work in progress title and the game is beyond experimental
 in its current state.
 ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-#Starting the game
+    #Starting the game
 start = input("Hello and welcome to TextAdvGame Please type \"Start\" to begin").lower()
 while start != ("start"):
     start = input("Sorry that is not a valid response. Please type \"Start\"").lower()
 else:
     print("Let us begin")
 
-#Character creation
+    #Character creation
 
     #Your characters name
 name = input("Welcome to character creation! Please enter your name: ")
@@ -30,19 +30,23 @@ while s == 1:
         print("You are a: " + sex)
         s = 0
     else:
-        sex = input("Sorry that is not a valid response. Please type \"Male\" or \"Female\"").lower()
+        sex = input("Sorry that is not a valid re\" or \"Female\"").lower()
     #Your characters age
 age = input("How old are you?")
 print("You are: " + age + " years old ")
  
 def check():
     correctSpec = input("What would you like to change, Name, Sex, or Age?").lower()
-    if correctSpec == "name":
-        name = input("Welcome to character creation! Please enter your name: ")
-        print("Your name is: " + name)
+    def CharChange():
         changeAgain= input("Want to change anything else?: ").lower()
         if changeAgain == "yes":
             check()
+        elif changeAgain != "yes" or "no":
+            changeAgain = input("Want to change anything else?: ").lower()
+    if correctSpec == "name":
+        name = input("Please enter your name: ")
+        print("Your name is: " + name)
+        CharChange()        
     elif correctSpec == "sex":
         sex = input("Are you a male or a female?")
         if sex == "male":
@@ -50,54 +54,51 @@ def check():
         elif sex == "female":
             sex = "Female"
         print("You are a: " + sex)
-        changeAgain= input("Want to change anything else?: ").lower()
-        if changeAgain == "yes":
-            check()
+        CharChange()   
     elif correctSpec == "age":
         age = input("How old are you?")
         print("You are: " + age + " years old ")
-        changeAgain= input("Want to change anything else?: ").lower()
-        if changeAgain == "yes":
-            check()
-        
+        CharChange()
+    else:
+        print("Sorry thats not a valid response.")
+        check()
     #Checks if everything is correct
 correct = input("Is all of this correct?").lower()
 if correct == "no":
     check()
         
-#Function for instantly showing the characters information 
-def character():
-    print("Name: ", name)
-    print("Sex: ", sex)
-    print("Age: ", age)
-
-    
-#Clears the output screen (made for CodeSkulptor3 may not work on other output screens)
+    #Clears the output screen (made for CodeSkulptor3 may not work on other output screens)
 def clear():
     clear = 1
     while clear < 20:
         print("\n")
         clear += 1
+        
+    #Function for instantly showing the characters information 
+def character():
+    clear()
+    print("Name: ", name)
+    print("Sex: ", sex)
+    print("Age: ", age)
     
-#Test area
+    #Test area
 play = 0
 while play < 1:
     userinput = input("Please Enter a command: ")
         
-#Commands for debugging
+    #Commands for debugging
     def debugmenu():
         print("Welcome to the debugging menu")
 
-#Basic commands
+    #Basic commands
     if userinput == "help":
         clear()
         print("Welcome to the \"Help\" menu")
         print("Here are a list of commands you may enter")
-        print("help \t this opens the \"Help\" menu")
+        print("help \t\t this opens the \"Help\" menu")
         print("character \t this opens the character information screen")
-        print("end \t ends the program")
+        print("end \t\t ends the program")
     if userinput == "character":
         character()
     if userinput == "end":
         play = 1
-
