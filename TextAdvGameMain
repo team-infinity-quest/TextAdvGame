@@ -45,9 +45,9 @@ def check():
             check()
     elif correctSpec == "sex":
         sex = input("Are you a male or a female?")
-        if sex == "male" or "Male":
+        if sex == "male":
             sex = "Male"      
-        elif sex == "female" or "Female":
+        elif sex == "female":
             sex = "Female"
         print("You are a: " + sex)
         changeAgain= input("Want to change anything else?: ").lower()
@@ -100,5 +100,4 @@ while play < 1:
         character()
     if userinput == "end":
         play = 1
-        
-       
+
