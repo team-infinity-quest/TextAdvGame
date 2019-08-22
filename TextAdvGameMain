@@ -35,13 +35,14 @@ while s == 1:
 age = input("How old are you?")
 print("You are: " + age + " years old ")
  
-    #Checks if everything is correct
-correct = input("Is all of this correct?").lower()
-if correct == "no":
+def check():
     correctSpec = input("What would you like to change, Name, Sex, or Age?").lower()
     if correctSpec == "name":
         name = input("Welcome to character creation! Please enter your name: ")
         print("Your name is: " + name)
+        changeAgain= input("Want to change anything else?: ").lower()
+        if changeAgain == "yes":
+            check()
     elif correctSpec == "sex":
         sex = input("Are you a male or a female?")
         if sex == "male" or "Male":
@@ -49,10 +50,20 @@ if correct == "no":
         elif sex == "female" or "Female":
             sex = "Female"
         print("You are a: " + sex)
+        changeAgain= input("Want to change anything else?: ").lower()
+        if changeAgain == "yes":
+            check()
     elif correctSpec == "age":
         age = input("How old are you?")
         print("You are: " + age + " years old ")
-       
+        changeAgain= input("Want to change anything else?: ").lower()
+        if changeAgain == "yes":
+            check()
+        
+    #Checks if everything is correct
+correct = input("Is all of this correct?").lower()
+if correct == "no":
+    check()
         
 #Function for instantly showing the characters information 
 def character():
@@ -89,3 +100,5 @@ while play < 1:
         character()
     if userinput == "end":
         play = 1
+        
+       
