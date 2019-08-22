@@ -6,8 +6,8 @@ in its current state.
 
 #Starting the game
 start = input("Hello and welcome to TextAdvGame Please type \"Start\" to begin").lower()
-while start != ("start" or "Start"):
-    start = input("Sorry that is not a valid response. Please type \"Start\"")
+while start != ("start"):
+    start = input("Sorry that is not a valid response. Please type \"Start\"").lower()
 else:
     print("Let us begin")
 
@@ -21,15 +21,16 @@ print("Your name is: " + name)
 s = 1
 sex = input("Are you Male or Female?").lower()
 while s == 1:
-    if sex == "male" or "Male":
+    if sex == "male":
         sex = "Male"
+        print("You are a: " + sex)
         s = 0
-    elif sex == "female" or "Female":
+    elif sex == "female":
         sex = "Female"
+        print("You are a: " + sex)
         s = 0
     else:
-        sex = input("Sorry that is not a valid response. Please type \"male\" or \"female\"")
-    print("You are a: " + sex)
+        sex = input("Sorry that is not a valid response. Please type \"Male\" or \"Female\"").lower()
     #Your characters age
 age = input("How old are you?")
 print("You are: " + age + " years old ")
