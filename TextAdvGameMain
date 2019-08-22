@@ -40,9 +40,7 @@ def check():
     def CharChange():
         changeAgain= input("Want to change anything else?: ").lower()
         if changeAgain == "yes":
-            check()
-        elif changeAgain != "yes" or "no":
-            changeAgain = input("Want to change anything else?: ").lower()
+            check()        
     if correctSpec == "name":
         name = input("Please enter your name: ")
         print("Your name is: " + name)
