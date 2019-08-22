@@ -1,38 +1,38 @@
 ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-Hello and welcome to the InfinityQuest!
+Hello and welcome to Team Infinity Quest's TextAdvGame!
 This is a work in progress title and the game is beyond experimental 
 in its current state.
 ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
 #Starting the game
-start = input("Hello and welcome to the Infinity Quest! Please type \"Start\" to begin").lower()
+start = input("Hello and welcome to TextAdvGame Please type \"Start\" to begin").lower()
 while start != ("start" or "Start"):
     start = input("Sorry that is not a valid response. Please type \"Start\"")
 else:
-    print("Let us begin.")
+    print("Let us begin")
 
 #Character creation
 
     #Your characters name
 name = input("Welcome to character creation! Please enter your name: ")
-print("Your name is " + name + ".")
+print("Your name is: " + name)
     
     #Your characters sex
 s = 1
-sex = input("Are you a male or a female?").lower()
+sex = input("Are you Male or Female?").lower()
 while s == 1:
-    if sex == "male":
-        print("You are a " + sex + ".")
+    if sex == "male" or "Male":
+        sex = "Male"
         s = 0
-    elif sex == "female":
-        print("You are a " + sex + ".")
+    elif sex == "female" or "Female":
+        sex = "Female"
         s = 0
     else:
         sex = input("Sorry that is not a valid response. Please type \"male\" or \"female\"")
-    
+    print("You are a: " + sex)
     #Your characters age
-age = input("How old are you")
-print("You are " + age + " years old " + ".")
+age = input("How old are you?")
+print("You are: " + age + " years old ")
  
     #Checks if everything is correct
 correct = input("Is all of this correct?").lower()
@@ -40,13 +40,17 @@ if correct == "no":
     correctSpec = input("What would you like to change, Name, Sex, or Age?").lower()
     if correctSpec == "name":
         name = input("Welcome to character creation! Please enter your name: ")
-        print("Your name is " + name + ".")
+        print("Your name is: " + name)
     elif correctSpec == "sex":
         sex = input("Are you a male or a female?")
-        print("You are a " + sex + ".")
+        if sex == "male" or "Male":
+            sex = "Male"      
+        elif sex == "female" or "Female":
+            sex = "Female"
+        print("You are a: " + sex)
     elif correctSpec == "age":
         age = input("How old are you?")
-        print("You are " + age + " years old " + ".")
+        print("You are: " + age + " years old ")
        
         
 #Function for instantly showing the characters information 
