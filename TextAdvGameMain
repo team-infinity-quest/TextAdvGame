@@ -79,10 +79,43 @@ def character():
     print("Sex: ", sex)
     print("Age: ", age)
     
+    
+    #Quick testing place for the story and mechanics
+    '''
+    Quick idea for how to run each room
+    Have each room be a function that has variables set to decide what 
+    variations need to be present
+    For instance a player walks into a room
+    the player has done x but not y 
+    if those x and/or y effect that room, there will be something different
+    say the player had already done something in there like
+    lighting a torch or taking an item
+    this will keep it from forcing the player to redo it
+    the only alternative I can think of for this would be to have a
+    insane amount of variables that have been custom made for each 
+    possible command the player makes
+    of course that would take ages and is pretty much
+    impossible 
+    '''
+def storytest():
+    clear()
+    storyPlaying = 1
+    while storyPlaying == 1:
+        print("You wake up in a dark room, you can see a faint light coming in through what \ncould only be described as a window.")
+        print("There is a a table in the corner of the room.")
+        storytestResponse = input("What do you do?").lower()
+        if storytestResponse == "check table":
+            print("\nYou check the table")
+            print("Upon inspecting the table, you find a peice of paper. It says...")
+            print("Hello ", name, " you may not fully understand whats going on right now \nbut I can assure you it will come to you in time.")
+            print("I\'m sorry I have to leave you in this situation, but please understand\nwe did it with good intentions.")
+            print("We left you some supplies in the drawer of the table.\nPlease take them and esscape.")
+            print("God speed ", name, "...")
     #Test area
 play = 0
 while play < 1:
     userinput = input("Please Enter a command: ")
+    
         
     #Commands for debugging
     def debugmenu():
@@ -95,8 +128,11 @@ while play < 1:
         print("Here are a list of commands you may enter")
         print("help \t\t this opens the \"Help\" menu")
         print("character \t this opens the character information screen")
+        print("story \t\t this begins the story")
         print("end \t\t ends the program")
     if userinput == "character":
         character()
     if userinput == "end":
         play = 1
+    if userinput == "story":
+        storytest()
