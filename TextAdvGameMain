@@ -97,20 +97,33 @@ def character():
     of course that would take ages and is pretty much
     impossible 
     '''
-def storytest():
+def Woods1Room1():
     clear()
-    storyPlaying = 1
-    while storyPlaying == 1:
-        print("You wake up in a dark room, you can see a faint light coming in through what \ncould only be described as a window.")
-        print("There is a a table in the corner of the room.")
-        storytestResponse = input("What do you do?").lower()
-        if storytestResponse == "check table":
+    Woods1Room1 = 1
+    Woods1Room1_Objective1 = 0
+    Woods1Room1_Item1 = 0
+    print("You wake up in a dark room, you can see a faint light coming in through what \ncould only be described as a window.")
+    print("There is a a table in the corner of the room.")
+    while Woods1Room1 == 1:
+        Woods1Room1_Res = input("What do you do?").lower()
+        if Woods1Room1_Objective1 == 1 and Woods1Room1_Res == "check table" and Woods1Room1_Item1 == 0:
+            print("\nYou open up the drawer on the table")
+            print("You find (Filler)")
+            Woods1Room1_Item1 = 1
+        elif Woods1Room1_Res == "check table" and Woods1Room1_Objective1 == 0:
             print("\nYou check the table")
             print("Upon inspecting the table, you find a peice of paper. It says...")
             print("Hello ", name, " you may not fully understand whats going on right now \nbut I can assure you it will come to you in time.")
             print("I\'m sorry I have to leave you in this situation, but please understand\nwe did it with good intentions.")
             print("We left you some supplies in the drawer of the table.\nPlease take them and esscape.")
             print("God speed ", name, "...")
+            Woods1Room1_Objective1 = 1
+        elif Woods1Room1_Res == "check window":
+            print("\nYou look out the window")
+            print("You can see trees, and even more trees, wait is that a tree!?")
+            print("After seeing so many trees you come to the conclusion\nthat you are in a forest.")
+        else:
+            print("\nYou can't ", Woods1Room1_Res)
     #Test area
 play = 0
 while play < 1:
