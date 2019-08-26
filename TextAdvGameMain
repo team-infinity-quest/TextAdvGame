@@ -12,6 +12,11 @@ else:
     print("Let us begin")
 
     #Character creation
+    
+char1 = {"power": 10, "health": 100}
+char2 = {"power": 1, "health": 50}
+char3 = {"power": 5, "health": 100}
+char4 = {"power": 100, "health": 90}
 
     #Your characters name
 name = input("Welcome to character creation! Please enter your name: ")
