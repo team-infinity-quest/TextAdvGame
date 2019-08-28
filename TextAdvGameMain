@@ -3,7 +3,7 @@ Hello and welcome to Team Infinity Quest's TextAdvGame!
 This is a work in progress title and the game is beyond experimental 
 in its current state.
 ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-import random
+from random import *
     #All items 
 lockpick = 0
 medkit = 0
@@ -11,24 +11,103 @@ medkit = 0
     #All cloths and armors
 cloak = {"defence": 5}
 
-	#Skill checks will use randoms to boost the player as if using a D20
+    #Skill checks will use randoms to boost the player as if using a D20
     #Skill checks
-veryeasylock = {"skill": 5} #Player needs a minimum skill stat of 5 to pick this lock
+veryeasylock = {"skill": 7} #Player needs a minimum skill stat of 7 to pick this lock
 easylock = {"skill": 10} 	#Player needs a minimum skill stat of 10 to pick this lock
 normallock = {"skill": 15}	#Player needs a minimum skill stat of 15 to pick this lock
 
-    #Starting the game
-start = input("Hello and welcome to TextAdvGame Please type \"Start\" to begin").lower()
-while start != ("start"):
-    start = input("Sorry that is not a valid response. Please type \"Start\"").lower()
-else:
-    print("Let us begin")
 
     #Classes    
 Knight = {"health": 100, "strength": 15, "dexterity": 10, "inteligence": 8, "charisma": 10, "stealth": 5, "skill": 3}
 Mage = {"health": 75, "strength": 6, "dexterity": 6, "inteligence": 15, "charisma": 8, "stealth": 5, "skill": 5}
 Rogue = {"health": 80, "strength": 9, "dexterity": 15, "inteligence": 9, "charisma": 10, "stealth": 15, "skill": 15}
 
+    #Stat check rolls
+def knightveryeasylock():
+    skillCheck = randint(1, 21)
+    print("\nYou attempt to pick the lock...")
+    print("You roll a ", skillCheck) 
+    skillAdd = 0
+    if skillCheck < 5:
+        skillAdd = 0
+    elif skillCheck >= 5 and skillCheck < 8:
+        skillAdd = 1
+    elif skillCheck >= 8 and skillCheck < 12:
+        skillAdd = 2
+    elif skillCheck >= 12 and skillCheck < 15:
+        skillAdd = 3
+    elif skillCheck >= 15 and skillCheck < 18:
+        skillAdd = 4
+    elif skillCheck >= 18 and skillCheck < 20:
+        skillAdd = 5
+    elif skillCheck == 20:
+        skillAdd = 6
+    skillstatCheck = Knight["skill"] + skillAdd
+    print(Knight["skill"] + skillAdd)
+    if skillstatCheck >= 7:
+        print("You successfully pick the lock!")
+    elif skillstatCheck < 7:
+        print("You fail to pick the lock...")
+def mageveryeasylock():
+    skillCheck = randint(1, 21)
+    print("\nYou attempt to pick the lock...")
+    print("You roll a ", skillCheck) 
+    skillAdd = 0
+    if skillCheck < 5:
+        skillAdd = 0
+    elif skillCheck >= 5 and skillCheck < 8:
+        skillAdd = 1
+    elif skillCheck >= 8 and skillCheck < 12:
+        skillAdd = 2
+    elif skillCheck >= 12 and skillCheck < 15:
+        skillAdd = 3
+    elif skillCheck >= 15 and skillCheck < 18:
+        skillAdd = 4
+    elif skillCheck >= 18 and skillCheck < 20:
+        skillAdd = 5
+    elif skillCheck == 20:
+        skillAdd = 6
+    skillstatCheck = Mage["skill"] + skillAdd
+    print(Mage["skill"] + skillAdd)
+    if skillstatCheck >= 7:
+        print("You successfully pick the lock!")
+    elif skillstatCheck < 7:
+        print("You fail to pick the lock...")
+def rogueveryeasylock():
+    skillCheck = randint(1, 21)
+    print("\nYou attempt to pick the lock...")
+    print("You roll a ", skillCheck) 
+    skillAdd = 0
+    if skillCheck < 5:
+        skillAdd = 0
+    elif skillCheck >= 5 and skillCheck < 8:
+        skillAdd = 1
+    elif skillCheck >= 8 and skillCheck < 12:
+        skillAdd = 2
+    elif skillCheck >= 12 and skillCheck < 15:
+        skillAdd = 3
+    elif skillCheck >= 15 and skillCheck < 18:
+        skillAdd = 4
+    elif skillCheck >= 18 and skillCheck < 20:
+        skillAdd = 5
+    elif skillCheck == 20:
+        skillAdd = 6
+    skillstatCheck = Rogue["skill"] + skillAdd
+    print(Rogue["skill"] + skillAdd)
+    if skillstatCheck >= 7:
+        print("You successfully pick the lock!")
+    elif skillstatCheck < 7:
+        print("You fail to pick the lock...")
+    
+    
+    #Starting the game
+start = input("Hello and welcome to TextAdvGame Please type \"Start\" to begin").lower()
+while start != ("start"):
+    start = input("Sorry that is not a valid response. Please type \"Start\"").lower()
+else:
+    print("Let us begin")
+          
     #Character Customization
     #Your characters name
 name = input("Welcome to character creation! Please enter your name: ")
@@ -214,7 +293,8 @@ def Woods1Room1():
         Woods1Room1_Res = input("What do you do?").lower()
         if Woods1Room1_Objective1 == 1 and Woods1Room1_Res == "check table" and Woods1Room1_Item1 == 0:
             print("\nYou open up the drawer on the table")
-            print("You find (Filler)")
+            print("You find some lockpicks")
+            lockpick = 5
             Woods1Room1_Item1 = 1
         elif Woods1Room1_Res == "check table" and Woods1Room1_Objective1 == 0:
             print("\nYou check the table")
@@ -236,6 +316,15 @@ def Woods1Room1():
         elif Woods1Room1_Res == "open door":
             print("\nYou try to open the door... but it's locked")
             print("Maybe you could pick the lock or something?")
+    #The lockpicking here is only for testing ATM it needs to be able to work with all classes
+        elif Woods1Room1_Res == "lockpick door" and lockpick > 0:
+            if playerClass == "knight":
+                knightveryeasylock()
+            elif playerClass == "mage":
+                mageveryeasylock()
+            elif playerClass == "rogue":
+                rogueveryeasylock()
+            
         elif Woods1Room1_Res == "die":
             print("\nYou lose the will to live and die...")
             Woods1Room1 = 0
