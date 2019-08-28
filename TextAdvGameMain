@@ -13,9 +13,9 @@ cloak = {"defence": 5}
 
     #Skill checks will use randoms to boost the player as if using a D20
     #Skill checks
-veryeasylock = {"skill": 7} #Player needs a minimum skill stat of 7 to pick this lock
-easylock = {"skill": 10} 	#Player needs a minimum skill stat of 10 to pick this lock
-normallock = {"skill": 15}	#Player needs a minimum skill stat of 15 to pick this lock
+veryeasylock = {"skill": 7} #Player needs a minimum skill stat of 1 to pick this lock
+easylock = {"skill": 15} 	#Player needs a minimum skill stat of 9 to pick this lock
+normallock = {"skill": 25}	#Player needs a minimum skill stat of 19 to pick this lock
 
 
     #Classes    
@@ -44,11 +44,12 @@ def knightveryeasylock():
     elif skillCheck == 20:
         skillAdd = 6
     skillstatCheck = Knight["skill"] + skillAdd
-    print(Knight["skill"] + skillAdd)
+    print("That gives you ", Knight["skill"], " + ", skillAdd, " = ", Knight["skill"] + skillAdd)
     if skillstatCheck >= 7:
         print("You successfully pick the lock!")
     elif skillstatCheck < 7:
         print("You fail to pick the lock...")
+        
 def mageveryeasylock():
     skillCheck = randint(1, 21)
     print("\nYou attempt to pick the lock...")
@@ -69,11 +70,12 @@ def mageveryeasylock():
     elif skillCheck == 20:
         skillAdd = 6
     skillstatCheck = Mage["skill"] + skillAdd
-    print(Mage["skill"] + skillAdd)
+    print("That gives you ", Mage["skill"], " + ", skillAdd, " = ", Mage["skill"] + skillAdd)
     if skillstatCheck >= 7:
         print("You successfully pick the lock!")
     elif skillstatCheck < 7:
         print("You fail to pick the lock...")
+        
 def rogueveryeasylock():
     skillCheck = randint(1, 21)
     print("\nYou attempt to pick the lock...")
@@ -94,7 +96,7 @@ def rogueveryeasylock():
     elif skillCheck == 20:
         skillAdd = 6
     skillstatCheck = Rogue["skill"] + skillAdd
-    print(Rogue["skill"] + skillAdd)
+    print("That gives you ", Rogue["skill"], " + ", skillAdd, " = ", Rogue["skill"] + skillAdd)
     if skillstatCheck >= 7:
         print("You successfully pick the lock!")
     elif skillstatCheck < 7:
@@ -316,7 +318,18 @@ def Woods1Room1():
         elif Woods1Room1_Res == "open door":
             print("\nYou try to open the door... but it's locked")
             print("Maybe you could pick the lock or something?")
-    #The lockpicking here is only for testing ATM it needs to be able to work with all classes
+            
+'''
+We need a way to have the next room load after the player opens the door.
+After picking the lock the player will unlock the door and be able to
+enter the next room. Sadely I, Ethan do not know how to do that
+without making the function bellow this function.
+Which of course causes issues for obvious reasons.
+If anyone can develop a way to load the next room and keep everything that
+was done in the previous room, please do so and upload it to our Github.
+Also I would recomend saying if your working on it in our Discord chat,
+that should help us keep out of eachothers work.
+'''
         elif Woods1Room1_Res == "lockpick door" and lockpick > 0:
             if playerClass == "knight":
                 knightveryeasylock()
@@ -330,6 +343,18 @@ def Woods1Room1():
             Woods1Room1 = 0
         else:
             print("\nYou can't ", Woods1Room1_Res)
+            
+'''
+Here is a start of what the next room will be.
+Sadley since we have yet to connect this to the previous room
+we will be unable to test stuff here. If you add anything here
+please keep that in mind. Also try not to add anything to compelx here
+this is still an early part of the game, we need to make sure the player
+knows at least the basics of how to play our game.
+From, Ethan
+'''
+def Woods1Room2():
+    print("\nYou enter what appears to be a large room with various items scattered around.")
     #Test area
 play = 0
 while play < 1:
