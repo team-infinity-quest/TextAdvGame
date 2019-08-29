@@ -8,6 +8,36 @@ from random import *
 lockpick = 0
 medkit = 0
 
+def knight():
+    print("You are a ", playerClass)
+    print("Health: ", Knight["health"])
+    print("Strength: ", Knight["strength"])
+    print("Dexterity: ", Knight["dexterity"])
+    print("Inteligence: ", Knight["inteligence"])
+    print("Charisma: ", Knight["charisma"])
+    print("Stealth: ", Knight["stealth"])
+    print("Skill: ", Knight["skill"])
+    
+def mage():
+    print("You are a ", playerClass)
+    print("Health: ", Mage["health"])
+    print("Strength: ", Mage["strength"])
+    print("Dexterity: ", Mage["dexterity"])
+    print("Inteligence: ", Mage["inteligence"])
+    print("Charisma: ", Mage["charisma"])
+    print("Stealth: ", Mage["stealth"])
+    print("Skill: ", Mage["skill"])
+    
+def rogue():
+    print("You are a ", playerClass)
+    print("Health: ", Rogue["health"])
+    print("Strength: ", Rogue["strength"])
+    print("Dexterity: ", Rogue["dexterity"])
+    print("Inteligence: ", Rogue["inteligence"])
+    print("Charisma: ", Rogue["charisma"])
+    print("Stealth: ", Rogue["stealth"])
+    print("Skill: ", Rogue["skill"])
+
     #All cloths and armors
 cloak = {"defence": 5}
 
@@ -136,32 +166,11 @@ print("You are: " + age + " years old ")
     #Your class
 playerClass = input("What are you? Knight, Mage, or Rogue?").lower()
 if playerClass == "knight":
-    print("You are a ", playerClass)
-    print("Health: ", Knight["health"])
-    print("Strength: ", Knight["strength"])
-    print("Dexterity: ", Knight["dexterity"])
-    print("Inteligence: ", Knight["inteligence"])
-    print("Charisma: ", Knight["charisma"])
-    print("Stealth: ", Knight["stealth"])
-    print("Skill: ", Knight["skill"])
+    knight()
 elif playerClass == "mage":
-    print("You are a ", playerClass)
-    print("Health: ", Mage["health"])
-    print("Strength: ", Mage["strength"])
-    print("Dexterity: ", Mage["dexterity"])
-    print("Inteligence: ", Mage["inteligence"])
-    print("Charisma: ", Mage["charisma"])
-    print("Stealth: ", Mage["stealth"])
-    print("Skill: ", Mage["skill"])
+    mage()
 elif playerClass == "rogue":
-    print("You are a ", playerClass)
-    print("Health: ", Rogue["health"])
-    print("Strength: ", Rogue["strength"])
-    print("Dexterity: ", Rogue["dexterity"])
-    print("Inteligence: ", Rogue["inteligence"])
-    print("Charisma: ", Rogue["charisma"])
-    print("Stealth: ", Rogue["stealth"])
-    print("Skill: ", Rogue["skill"])
+    rogue()
  
 def check():
     correctSpec = input("What would you like to change, Name, Sex, Age, or Class?").lower()
@@ -188,34 +197,13 @@ def check():
     elif correctSpec == "class":
         playerClass = input("What are you? Knight, Mage, or Rogue?").lower()
         if playerClass == "knight":
-            print("You are a ", playerClass)
-            print("Health: ", Knight["health"])
-            print("Strength: ", Knight["strength"])
-            print("Dexterity: ", Knight["dexterity"])
-            print("Inteligence: ", Knight["inteligence"])
-            print("Charisma: ", Knight["charisma"])
-            print("Stealth: ", Knight["stealth"])
-            print("Skill: ", Knight["skill"])
+            knight()
             CharChange()
         elif playerClass == "mage":
-            print("You are a ", playerClass)
-            print("Health: ", Mage["health"])
-            print("Strength: ", Mage["strength"])
-            print("Dexterity: ", Mage["dexterity"])
-            print("Inteligence: ", Mage["inteligence"])
-            print("Charisma: ", Mage["charisma"])
-            print("Stealth: ", Mage["stealth"])
-            print("Skill: ", Mage["skill"])
+            mage()
             CharChange()
         elif playerClass == "rogue":
-            print("You are a ", playerClass)
-            print("Health: ", Rogue["health"])
-            print("Strength: ", Rogue["strength"])
-            print("Dexterity: ", Rogue["dexterity"])
-            print("Inteligence: ", Rogue["inteligence"])
-            print("Charisma: ", Rogue["charisma"])
-            print("Stealth: ", Rogue["stealth"])
-            print("Skill: ", Rogue["skill"])
+            rogue()
             CharChange()
     else:
         print("Sorry thats not a valid response.")
@@ -239,32 +227,11 @@ def character():
     print("Sex: ", sex)
     print("Age: ", age)
     if playerClass == "knight":
-        print("You are a ", playerClass)
-        print("Health: ", Knight["health"])
-        print("Strength: ", Knight["strength"])
-        print("Dexterity: ", Knight["dexterity"])
-        print("Inteligence: ", Knight["inteligence"])
-        print("Charisma: ", Knight["charisma"])
-        print("Stealth: ", Knight["stealth"])
-        print("Skill: ", Knight["skill"])
+        knight()
     elif playerClass == "mage":
-        print("You are a ", playerClass)
-        print("Health: ", Mage["health"])
-        print("Strength: ", Mage["strength"])
-        print("Dexterity: ", Mage["dexterity"])
-        print("Inteligence: ", Mage["inteligence"])
-        print("Charisma: ", Mage["charisma"])
-        print("Stealth: ", Mage["stealth"])
-        print("Skill: ", Mage["skill"])
+        mage()
     elif playerClass == "rogue":
-        print("You are a ", playerClass)
-        print("Health: ", Rogue["health"])
-        print("Strength: ", Rogue["strength"])
-        print("Dexterity: ", Rogue["dexterity"])
-        print("Inteligence: ", Rogue["inteligence"])
-        print("Charisma: ", Rogue["charisma"])
-        print("Stealth: ", Rogue["stealth"])
-        print("Skill: ", Rogue["skill"])
+        rogue()
     
     
     #Quick testing place for the story and mechanics
