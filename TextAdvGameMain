@@ -342,17 +342,19 @@ def Woods1Room2():
             print("You: Pretty sure the food here sucks, I should hurry up and find a way out, before I have to eat any.")
         elif Woods1Room2_Res == "check skeleton" or Woods1Room2_Res == "check skeletons":
             print("test")
+            
+    #Credits
+def credits(): 
+    print("\nThank you for playing!")
+    print("This game was brought to you by these wonderful people!")
+    print("Programmers: Ethan Smith, Luke Podnar, (Manas and Ricky once they help)")
+    print("Story: Ethan Smith (also any of you who help with story)")
     
-    #Test area
+    #Command menu
+print("\nWelcome to the main menu. Please enter \"help\" to get a list of commands")
 play = 0
 while play < 1:
     userinput = input("Please Enter a command: ")
-def credits():    
-    time.sleep(1)
-    print("Thank you for playing!")
-    print("Programmers: Ethan Smith, Luke (Please put your last name), (Manas and Ricky once they help)")
-    print("Story: Ethan Smith (also any of you who help with story)")
-    
         
     #Commands for debugging
     def debugmenu():
