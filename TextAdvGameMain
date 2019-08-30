@@ -4,9 +4,13 @@ This is a work in progress title and the game is beyond experimental
 in its current state.
 ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 from random import *
+import simplegui
+
     #All items 
 lockpick = 0
 medkit = 0
+    
+    #All Classes
 
 def knight():
     print("You are a ", playerClass)
@@ -41,14 +45,13 @@ def rogue():
     #All cloths and armors
 cloak = {"defence": 5}
 
-    #Skill checks will use randoms to boost the player as if using a D20
     #Skill checks
 veryeasylock = {"skill": 7} #Player needs a minimum skill stat of 1 to pick this lock
 easylock = {"skill": 15} 	#Player needs a minimum skill stat of 9 to pick this lock
 normallock = {"skill": 25}	#Player needs a minimum skill stat of 19 to pick this lock
 
 
-    #Classes    
+    #Classes Stats  
 Knight = {"health": 100, "strength": 15, "dexterity": 10, "inteligence": 8, "charisma": 10, "stealth": 5, "skill": 3}
 Mage = {"health": 75, "strength": 6, "dexterity": 6, "inteligence": 15, "charisma": 8, "stealth": 5, "skill": 5}
 Rogue = {"health": 80, "strength": 9, "dexterity": 15, "inteligence": 9, "charisma": 10, "stealth": 15, "skill": 15}
@@ -158,7 +161,7 @@ while s == 1:
         print("You are a: " + sex)
         s = 0
     else:
-        sex = input("Sorry that is not a valid re\" or \"Female\"").lower()
+        sex = input("Sorry that is not a valid response, please enter \"Male\" or \"Female\"").lower()
     #Your characters age
 age = input("How old are you?")
 print("You are: " + age + " years old ")
@@ -171,6 +174,8 @@ elif playerClass == "mage":
     mage()
 elif playerClass == "rogue":
     rogue()
+else:
+    playerClass = input("What are you? Knight, Mage, or Rogue?").lower()
  
 def check():
     correctSpec = input("What would you like to change, Name, Sex, Age, or Class?").lower()
@@ -205,6 +210,7 @@ def check():
         elif playerClass == "rogue":
             rogue()
             CharChange()
+
     else:
         print("Sorry thats not a valid response.")
         check()
@@ -234,7 +240,6 @@ def character():
         rogue()
     
     
-    #Quick testing place for the story and mechanics
     '''
     Quick idea for how to run each room
     Have each room be a function that has variables set to decide what 
