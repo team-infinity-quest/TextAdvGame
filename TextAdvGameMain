@@ -17,7 +17,7 @@ def knight():
     print("Health: ", Knight["health"])
     print("Strength: ", Knight["strength"])
     print("Dexterity: ", Knight["dexterity"])
-    print("Inteligence: ", Knight["inteligence"])
+    print("Inteligence: ", Knight["intelligence"])
     print("Charisma: ", Knight["charisma"])
     print("Stealth: ", Knight["stealth"])
     print("Skill: ", Knight["skill"])
@@ -27,7 +27,7 @@ def mage():
     print("Health: ", Mage["health"])
     print("Strength: ", Mage["strength"])
     print("Dexterity: ", Mage["dexterity"])
-    print("Inteligence: ", Mage["inteligence"])
+    print("Inteligence: ", Mage["intelligence"])
     print("Charisma: ", Mage["charisma"])
     print("Stealth: ", Mage["stealth"])
     print("Skill: ", Mage["skill"])
@@ -37,7 +37,7 @@ def rogue():
     print("Health: ", Rogue["health"])
     print("Strength: ", Rogue["strength"])
     print("Dexterity: ", Rogue["dexterity"])
-    print("Inteligence: ", Rogue["inteligence"])
+    print("Inteligence: ", Rogue["intelligence"])
     print("Charisma: ", Rogue["charisma"])
     print("Stealth: ", Rogue["stealth"])
     print("Skill: ", Rogue["skill"])
@@ -52,9 +52,9 @@ normallock = {"skill": 25}	#Player needs a minimum skill stat of 19 to pick this
 
 
     #Classes Stats  
-Knight = {"health": 100, "strength": 15, "dexterity": 10, "inteligence": 8, "charisma": 10, "stealth": 5, "skill": 3}
-Mage = {"health": 75, "strength": 6, "dexterity": 6, "inteligence": 15, "charisma": 8, "stealth": 5, "skill": 5}
-Rogue = {"health": 80, "strength": 9, "dexterity": 15, "inteligence": 9, "charisma": 10, "stealth": 15, "skill": 15}
+Knight = {"health": 100, "strength": 15, "dexterity": 10, "intelligence": 8, "charisma": 10, "stealth": 5, "skill": 3}
+Mage = {"health": 75, "strength": 6, "dexterity": 6, "intelligence": 15, "charisma": 8, "stealth": 5, "skill": 5}
+Rogue = {"health": 80, "strength": 9, "dexterity": 15, "intelligence": 9, "charisma": 10, "stealth": 15, "skill": 15}
 
     #Stat check rolls
 def knightveryeasylock():
@@ -347,6 +347,11 @@ def Woods1Room2():
 play = 0
 while play < 1:
     userinput = input("Please Enter a command: ")
+def credits():    
+    time.sleep(1)
+    print("Thank you for playing!")
+    print("Programmers: Ethan Smith, Luke (Please put your last name), (Manas and Ricky once they help)")
+    print("Story: Ethan Smith (also any of you who help with story)")
     
         
     #Commands for debugging
@@ -365,6 +370,7 @@ while play < 1:
     if userinput == "character":
         character()
     if userinput == "end":
+        credits()
         play = 1
     if userinput == "story":
         Woods1Room1()
