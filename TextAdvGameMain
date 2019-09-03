@@ -2,6 +2,14 @@
 Hello and welcome to Team Infinity Quest's TextAdvGame!
 This is a work in progress title and the game is beyond experimental 
 in its current state.
+
+Note for all programmers working on this game
+Please update the version number each time you update something in the code
+This will help us keep track of updates
+Please update the number bellow and include what number the update is 
+in your commit on GitHub as you will see in the commit for this update
+Oh and you do not need to update the number if you only change like 1 line of code
+Version 0.001
 ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 from random import *
 import simplegui
@@ -346,8 +354,8 @@ def Woods1Room2():
             print("\nYou lose the will to live and die...")
             print("After a while you join the pile of skeletons...")
             Woods1Room2 = 0
-		elif Woods1Room2_Res == "talk with skeleton" or "talk skeleton":
-			print("\nYou talk with the skeleton.")
+        elif Woods1Room2_Res == "talk with skeleton" or "talk skeleton":
+            print("\nYou talk with the skeleton.")
             print(name + ": Greetings Mr. Skeleton!")
             print("Mr. Skeleton: Um hi...")
             print(name + ": Well how are you?")
