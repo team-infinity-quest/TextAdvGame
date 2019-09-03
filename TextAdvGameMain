@@ -9,7 +9,7 @@ This will help us keep track of updates
 Please update the number bellow and include what number the update is 
 in your commit on GitHub as you will see in the commit for this update
 Oh and you do not need to update the number if you only change like 1 line of code
-Version 0.001
+Version 0.002
 ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 from random import *
 import simplegui
@@ -366,6 +366,14 @@ def Woods1Room2():
             print("Mr. Skeleton: Also my name isn\'t \"Mr. Skeleton\" it\'s Bob, now please leave me alone.")
             print(name + ": Oh uhm o-ok Mr. Skele- I mean Bob...")
             print("Bob the grumpy Skeleton: Jeesh that meat bag was annoying.")
+            
+#Yet another experimental room that needs to be linked
+def Woods1Room3():
+    Woods1Room3 = 1
+    print("\nYou enter a large room.")
+    print("The room, unlike the previous room, is well lit and looks relatively clean.")
+    print("You can't help but think something is off...")
+#This room is unfinished and needs more content
             
     #Credits
 def credits(): 
