@@ -346,6 +346,18 @@ def Woods1Room2():
             print("\nYou lose the will to live and die...")
             print("After a while you join the pile of skeletons...")
             Woods1Room2 = 0
+		elif Woods1Room2_Res == "talk with skeleton" or "talk skeleton":
+			print("\nYou talk with the skeleton.")
+            print(name + ": Greetings Mr. Skeleton!")
+            print("Mr. Skeleton: Um hi...")
+            print(name + ": Well how are you?")
+            print("Mr. Skeleton: Um... dead so not so good.")
+            print(name + ": Oh... right.")
+            print("Mr. Skeleton: Why are you talking to me? Don\'t you have better things to do?")
+            print(name + ": W-well I suppose...")
+            print("Mr. Skeleton: Also my name isn\'t \"Mr. Skeleton\" it\'s Bob, now please leave me alone.")
+            print(name + ": Oh uhm o-ok Mr. Skele- I mean Bob...")
+            print("Bob the grumpy Skeleton: Jeesh that meat bag was annoying.")
             
     #Credits
 def credits(): 
@@ -353,6 +365,20 @@ def credits():
     print("This game was brought to you by these wonderful people!")
     print("Programmers:\tEthan Smith, Luke Podnar, (Manas and Ricky once they help)")
     print("Story:\t\tEthan Smith (also any of you who help with story)")
+
+    #Secret Joke
+def jokeset1():
+    clear()
+    print("Why hello there!\nYou appear to have found the top secret, secret place 1!")
+    print("This is a land of jokes and stupid things please enjoy!")
+    name = input("What is your name?")
+    print("My name is " + name)
+    quest = input("What is your quest?")
+    print("My quest is " + quest)
+    favcolor = input("What is your favorite color?")
+    print("My favorite color is " + favcolor)
+    print("Mysterious voice: Right. Off you go.")
+    print("Random Guy: What a strange set of questions")
     
     #Command menu
 print("\nWelcome to the main menu. Please enter \"help\" to get a list of commands")
@@ -380,3 +406,7 @@ while play < 1:
         play = 1
     if userinput == "story":
         Woods1Room1()
+        
+    #Secret commands
+    if userinput == "MPHG":
+        jokeset1()
